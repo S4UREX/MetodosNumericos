@@ -29,9 +29,7 @@ class NewtonRaphson(MethodsFormulas):
         Xn_1 = xn - (Fxn / Fdxn)
         table.append_row([it + 1, xn, Fxn, Fdxn, Xn_1])
 
-        print(table)
-
-        if ((Xn_1 - xn_1old) <= error) & it != 0:
+        if ( abs(Xn_1 - xn_1old) <= error) & it != 0:
             print(table)
             return Xn_1
         else:

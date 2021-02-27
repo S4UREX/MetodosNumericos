@@ -31,13 +31,8 @@ class FalsePosition(MethodsFormulas):
         table.append_row([it + 1, xa, xb, xr, Fxa, Fxr, FxaXFxr])
 
         # Caso base
-        if ( (xr - xrold) <= error_range) & it != 0:
+        if ( abs(xr - xrold) <= error_range) & it != 0:
             print(table)
-            print("it", it)
-            print("xa: ", xa)
-            print("xb: ", xb)
-            print("xr: ", xr)
-            print("xr Old", xrold)
             return xr
         elif FxaXFxr < 0:
             return self.__process(xa, xr, equation, error_range, xr, it + 1)
