@@ -2,7 +2,7 @@ import sympy as sp
 from beautifultable import *
 import warnings
 from static.NumericalMethods.Methods_formulas import MethodsFormulas
-from math import log10
+from math import log10, sqrt
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 table = BeautifulTable()

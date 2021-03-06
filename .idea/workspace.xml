@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d304cb5-ad35-43ba-8bc8-10efd4551ba0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/FormExec/Formula_Execution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/NumericalMethods/Bisection/Bisection.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/NumericalMethods/Bisection/Bisection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/NumericalMethods/FalsePosition/FalsePosition.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/NumericalMethods/FalsePosition/FalsePosition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/NumericalMethods/Methods_formulas.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/NumericalMethods/Methods_formulas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/NumericalMethods/Newton_Raphson/NewtonRaphson.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/NumericalMethods/Newton_Raphson/NewtonRaphson.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -292,7 +289,7 @@
       <workItem from="1613329359881" duration="152000" />
       <workItem from="1613330366733" duration="3827000" />
       <workItem from="1614436256257" duration="5924000" />
-      <workItem from="1614990192266" duration="4915000" />
+      <workItem from="1614990192266" duration="5432000" />
     </task>
     <servers />
   </component>
