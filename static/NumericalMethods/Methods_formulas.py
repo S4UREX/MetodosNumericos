@@ -13,6 +13,7 @@ class MethodsFormulas(object):
     def evaluate_formula(self, equation: str, value: float):
         x = value
         return eval(equation)
+        # 2**2+3*x
 
     # Funcion para verificar si la formula es valida
     def validate_formula(self, equation: str):

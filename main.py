@@ -35,4 +35,5 @@ def newtonraphson(xn, equation, error_range):
 
 
 if __name__ == '__main__':
-    app.run()
+    # app.run()
+    print(eval("2*log10(5)"))
