@@ -1,20 +1,21 @@
 from static.NumericalMethods.Bisection.Bisection import Bisection
 from static.NumericalMethods.FalsePosition.FalsePosition import FalsePosition
 from static.NumericalMethods.Newton_Raphson.NewtonRaphson import NewtonRaphson
-
+from flask_cors import CORS
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+CORS(app)
 
-
-@app.route('/bisection/<xi>/<xu>/<equation>/<error_range>', methods=['GET'])
-def bisection(xi, xu, equation, error_range):
-    xi = float(xi)
-    xu = float(xu)
-    error_range = float(error_range)
-    result: float = Bisection().execute(xi, xu, equation, error_range)
-    print(result)
-    return jsonify(msg=result)
+@app.route('/bisection', methods=['POST'])
+def bisection():
+    json = request.get_json();
+    xi = float(request.get_json()['xi'])
+    xu = float(request.get_json()['xu'])
+    error_range = float(request.get_json()['errorRange'])
+    equation = request.get_json()['equation']
+    result = Bisection().execute(xi, xu, equation, error_range)
+    return jsonify(result)
 
 
 @app.route('/falseposition/<xa>/<xb>/<equation>/<error_range>', methods=['GET'])
@@ -22,7 +23,7 @@ def falseposition(xa, xb, equation, error_range):
     xa = float(xa)
     xb = float(xb)
     error_range = float(error_range)
-    result: float = FalsePosition().execute(xa, xb, equation, error_range)
+    result = FalsePosition().execute(xa, xb, equation, error_range)
     return jsonify(msg=result)
 
 
@@ -35,5 +36,4 @@ def newtonraphson(xn, equation, error_range):
 
 
 if __name__ == '__main__':
-    # app.run()
-    print(eval("2*log10(5)"))
+    app.run()

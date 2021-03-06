@@ -1,5 +1,5 @@
 import decimal
-
+from math import log10, sqrt
 
 class MethodsFormulas(object):
 
@@ -18,7 +18,7 @@ class MethodsFormulas(object):
     # Funcion para verificar si la formula es valida
     def validate_formula(self, equation: str):
         try:
-            x = 0
+            x = 1
             eval(equation)
             return True
         except:

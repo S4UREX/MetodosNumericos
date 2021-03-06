@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 flask = "*"
 sympy = "*"
+beautifultable = "*"
+cors = "*"
+flask-cors = "==3.0.8"
 
 [dev-packages]
 
