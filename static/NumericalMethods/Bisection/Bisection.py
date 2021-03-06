@@ -35,7 +35,7 @@ class Bisection(MethodsFormulas):
         table.append_row(row)
 
         # Caso base
-        if (abs(xr - xrold) <= error_range) * 100 & it != 0:
+        if (abs(xr - xrold) <= error_range) & it != 0:
             print(table)
             return xr
         elif FxixFxr < 0:
