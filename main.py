@@ -29,12 +29,13 @@ def bisection():
 
 
 @app.route('/falseposition', methods=['POST'])
-def falseposition(xa, xb, equation, error_range):
+def falseposition():
     json = request.get_json()
     try:
-        xa = float(xa)
-        xb = float(xb)
-        error_range = float(error_range)
+        xa = float(request.get_json()['xa'])
+        xb = float(request.get_json()['xb'])
+        error_range = float(request.get_json()['error_range'])
+        equation = request.get_json()['equation']
         result = FalsePosition().execute(xa, xb, equation, error_range)
         return jsonify(
             ok=True,
@@ -48,11 +49,12 @@ def falseposition(xa, xb, equation, error_range):
 
 
 @app.route('/newtonraphson', methods=['POST'])
-def newtonraphson(xn, equation, error_range):
+def newtonraphson():
     json = request.get_json()
     try:
-        xn = float(xn)
-        error_range = float(error_range)
+        xn = float(request.get_json()['xn'])
+        error_range = float(request.get_json()['error_range'])
+        equation = request.get_json()['equation']
         result = NewtonRaphson().execute(xn, equation, error_range)
         return jsonify(
             ok=True,
