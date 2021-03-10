@@ -10,11 +10,13 @@ class FalsePosition(MethodsFormulas):
 
     def __init__(self):
         super().__init__()
+        self.iterations = []
 
     def execute(self, xa: float, xb: float, equation: str, error: float):
         if self.check_sqrt(xa, xb, equation):
             if self.validate_formula(equation):
                 table.column_headers = ["it", "xa", "xb", "xr", "F(xa)", "F(xr)", "F(xa)*F(xr)"]
+                self.iterations = []
                 return self.__process(xa, xb, equation, error)
             else:
                 return "La formula no es correcta"
@@ -29,11 +31,12 @@ class FalsePosition(MethodsFormulas):
         Fxr: float = self.evaluate_formula(equation, xr)
         FxaXFxr = Fxa * Fxr
         table.append_row([it + 1, xa, xb, xr, Fxa, Fxr, FxaXFxr])
+        self.iterations.append({"it": it + 1, "xa": xa, "xb": xb, "xr": xr, "fxa": Fxa, "fxr": Fxr, "fxiFxr": FxaXFxr})
 
         # Caso base
         if (abs(xr - xrold) <= error_range) & it != 0:
             print(table)
-            return xr
+            return {"iterations": self.iterations, "result": xr}
         elif FxaXFxr < 0:
             return self.__process(xa, xr, equation, error_range, xr, it + 1)
         else:
