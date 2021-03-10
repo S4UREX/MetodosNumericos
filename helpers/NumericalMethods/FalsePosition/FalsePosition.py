@@ -1,7 +1,6 @@
 from beautifultable import *
 import warnings
-from static.NumericalMethods.Methods_formulas import MethodsFormulas
-from math import log10, sqrt
+from helpers.NumericalMethods.Methods_formulas import MethodsFormulas
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 table = BeautifulTable()

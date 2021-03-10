@@ -1,18 +1,16 @@
-from typing import Union
-
 from beautifultable import *
 import warnings
-from static.NumericalMethods.Methods_formulas import MethodsFormulas
+from helpers.NumericalMethods.Methods_formulas import MethodsFormulas
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 table = BeautifulTable()
+
 
 class Bisection(MethodsFormulas):
 
     def __init__(self):
         super().__init__()
         self.iterations = []
-
 
     def execute(self, xi: float, xu: float, equation: str, error: float):
         if self.check_sqrt(xi, xu, equation):
@@ -27,7 +25,7 @@ class Bisection(MethodsFormulas):
 
     # Funcion que busca una raiz por el metodo de biseccion
     def __process(self, xi: float, xu: float, equation: str, error_range: float, xrold: float = 0,
-                  it: int = 0) -> Union[float, dict[str, Union[list[dict[str, Union[int, float]]], float]]]:
+                  it: int = 0):
 
         xr: float = (xi + xu) / 2
 
@@ -43,6 +41,6 @@ class Bisection(MethodsFormulas):
             print(table)
             return {"iterations": self.iterations, "result": xr}
         elif FxixFxr < 0:
-            return  self.__process(xi, xr, equation, error_range, xu, it + 1)
+            return self.__process(xi, xr, equation, error_range, xu, it + 1)
         else:
             return self.__process(xr, xu, equation, error_range, xi, it + 1)
