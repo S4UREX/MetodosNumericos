@@ -34,7 +34,7 @@ def falseposition():
     try:
         xa = float(request.get_json()['xa'])
         xb = float(request.get_json()['xb'])
-        error_range = float(request.get_json()['error_range'])
+        error_range = float(request.get_json()['errorRange'])
         equation = request.get_json()['equation']
         result = FalsePosition().execute(xa, xb, equation, error_range)
         return jsonify(
@@ -53,7 +53,7 @@ def newtonraphson():
     json = request.get_json()
     try:
         xn = float(request.get_json()['xn'])
-        error_range = float(request.get_json()['error_range'])
+        error_range = float(request.get_json()['errorRange'])
         equation = request.get_json()['equation']
         result = NewtonRaphson().execute(xn, equation, error_range)
         return jsonify(
