@@ -18,21 +18,23 @@ def bisection():
     return jsonify(result)
 
 
-@app.route('/falseposition/<xa>/<xb>/<equation>/<error_range>', methods=['GET'])
-def falseposition(xa, xb, equation, error_range):
-    xa = float(xa)
-    xb = float(xb)
-    error_range = float(error_range)
+@app.route('/falseposition', methods=['POST'])
+def falseposition():
+    xa = float(request.get_json()['xa'])
+    xb = float(request.get_json()['xb'])
+    error_range = float(request.get_json()['errorRange'])
+    equation = request.get_json()['equation']
     result = FalsePosition().execute(xa, xb, equation, error_range)
-    return jsonify(msg=result)
+    return jsonify(result)
 
 
-@app.route('/newtonraphson/<xn>/<equation>/<error_range>', methods=['GET'])
-def newtonraphson(xn, equation, error_range):
-    xn = float(xn)
-    error_range = float(error_range)
+@app.route('/newtonraphson', methods=['GET'])
+def newtonraphson():
+    xn = float(request.get_json()['xn'])
+    error_range = float(request.get_json()['errorRange'])
+    equation = request.get_json()['equation']
     result = NewtonRaphson().execute(xn, equation, error_range)
-    return jsonify(msg=result)
+    return jsonify(result)
 
 
 if __name__ == '__main__':

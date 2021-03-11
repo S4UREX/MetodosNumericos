@@ -12,6 +12,7 @@ class NewtonRaphson(MethodsFormulas):
 
     def __init__(self):
         super().__init__()
+        self.iterations = []
 
     def execute(self, xn: float, equation: str, error: float):
         if self.validate_formula(equation):
@@ -29,9 +30,10 @@ class NewtonRaphson(MethodsFormulas):
         Fdxn = self.evaluate_formula(derivative, xn)
         Xn_1 = xn - (Fxn / Fdxn)
         table.append_row([it + 1, xn, Fxn, Fdxn, Xn_1])
+        self.iterations.append({"it": it + 1, "xn": xn, "fxn": Fxn, "fdxn": Fdxn, "xn1": Xn_1})
 
         if ( abs(Xn_1 - xn_1old) <= error) & it != 0:
             print(table)
-            return Xn_1
+            return {"iterations": self.iterations, "result": Xn_1}
         else:
             return self.__process(Xn_1, equation, derivative, error, Xn_1, it + 1)
