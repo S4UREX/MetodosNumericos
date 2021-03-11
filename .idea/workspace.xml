@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d304cb5-ad35-43ba-8bc8-10efd4551ba0" name="Default Changelist" comment="" />
+    <list default="true" id="4d304cb5-ad35-43ba-8bc8-10efd4551ba0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/NumericalMethods/Newton_Raphson/NewtonRaphson.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/NumericalMethods/Newton_Raphson/NewtonRaphson.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -290,7 +293,7 @@
       <workItem from="1613330366733" duration="3827000" />
       <workItem from="1614436256257" duration="5924000" />
       <workItem from="1614990192266" duration="5432000" />
-      <workItem from="1615400461864" duration="14178000" />
+      <workItem from="1615400461864" duration="14770000" />
     </task>
     <servers />
   </component>
