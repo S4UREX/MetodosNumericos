@@ -1,8 +1,7 @@
 import sympy as sp
 from beautifultable import *
 import warnings
-from static.NumericalMethods.Methods_formulas import MethodsFormulas
-from math import log10, sqrt
+from helpers.NumericalMethods.Methods_formulas import MethodsFormulas
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 table = BeautifulTable()
@@ -20,6 +19,7 @@ class NewtonRaphson(MethodsFormulas):
             y = equation
             derivative: str = str(sp.diff(y, x))
             table.column_headers = ["it", "xn", "F(xn)", "F'(xn)", "Xn+1"]
+            self.iterations = []
             return self.__process(xn, equation, derivative, error)
         else:
             return "La formula no es correcta"

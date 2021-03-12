@@ -1,5 +1,5 @@
 import decimal
-from math import log10, sqrt
+from math import log10, sqrt, log
 
 class MethodsFormulas(object):
 

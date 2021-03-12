@@ -1,7 +1,6 @@
 from beautifultable import *
 import warnings
-from static.NumericalMethods.Methods_formulas import MethodsFormulas
-from math import log10, sqrt
+from helpers.NumericalMethods.Methods_formulas import MethodsFormulas
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 table = BeautifulTable()
@@ -17,6 +16,7 @@ class FalsePosition(MethodsFormulas):
         if self.check_sqrt(xa, xb, equation):
             if self.validate_formula(equation):
                 table.column_headers = ["it", "xa", "xb", "xr", "F(xa)", "F(xr)", "F(xa)*F(xr)"]
+                self.iterations = []
                 return self.__process(xa, xb, equation, error)
             else:
                 return "La formula no es correcta"
